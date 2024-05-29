@@ -240,7 +240,13 @@ require("lazy").setup({
 	-- "gc" to comment visual regions/lines
 	{ "numToStr/Comment.nvim", opts = {} },
 
-	{ "rose-pine/neovim", name = "rose-pine" },
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		opts = function()
+			return { variant = "moon", styles = { transparency = true } }
+		end,
+	},
 	{ "prettier/vim-prettier" },
 
 	-- Here is a more advanced example where we pass configuration
