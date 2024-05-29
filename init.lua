@@ -247,7 +247,22 @@ require("lazy").setup({
 			return { variant = "moon", styles = { transparency = true } }
 		end,
 	},
+
 	{ "prettier/vim-prettier" },
+
+	{ "nvim-lua/plenary.nvim" },
+	{
+		"theprimeagen/harpoon",
+		opts = function()
+			local mark = require("harpoon.mark")
+			local ui = require("harpoon.ui")
+
+			vim.keymap.set("n", "<leader>a", mark.add_file)
+			vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
+			vim.keymap.set("n", "<C-1>", ui.nav_prev)
+			vim.keymap.set("n", "<C-2>", ui.nav_next)
+		end,
+	},
 
 	-- Here is a more advanced example where we pass configuration
 	-- options to `gitsigns.nvim`. This is equivalent to the following Lua:
