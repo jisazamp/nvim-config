@@ -244,13 +244,15 @@ require("lazy").setup({
 		"rose-pine/neovim",
 		name = "rose-pine",
 		opts = function()
-			return { variant = "moon", styles = { transparency = true } }
+			return { styles = { transparency = true } }
 		end,
 	},
 
 	{ "prettier/vim-prettier" },
+	{ "psf/black" },
 
 	{ "nvim-lua/plenary.nvim" },
+
 	{
 		"theprimeagen/harpoon",
 		opts = function()
@@ -638,7 +640,6 @@ require("lazy").setup({
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format Lua code
 				"tsserver",
-				"pyright",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -816,7 +817,7 @@ require("lazy").setup({
 			-- Load the colorscheme here.
 			-- Like many other themes, this one has different styles, and you could load
 			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-			vim.cmd.colorscheme("rose-pine")
+			vim.cmd.colorscheme("rose-pine-main")
 
 			-- You can configure highlights by doing something like:
 			vim.cmd.hi("Comment gui=none")
